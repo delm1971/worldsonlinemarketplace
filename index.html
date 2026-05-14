@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World's Online Marketplace | Deals, Travel, Business Tools & Shopping Guides</title>
+  <meta name="description" content="Discover curated online deals, travel offers, business tools, shopping guides, wellness resources, and digital services from trusted niche sites." />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, Helvetica, sans-serif; background: #f6f8fc; color: #172033; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    .topbar { background: #0f172a; color: #fff; text-align: center; padding: 10px 16px; font-size: 14px; font-weight: 700; }
+    .hero { background: linear-gradient(135deg, #101828 0%, #1d4ed8 55%, #38bdf8 100%); color: #fff; padding: 76px 20px 64px; text-align: center; }
+    .hero-inner { max-width: 1050px; margin: auto; }
+    .badge { display: inline-block; background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.32); padding: 8px 15px; border-radius: 999px; font-weight: 800; margin-bottom: 18px; }
+    h1 { font-size: clamp(38px, 6vw, 66px); line-height: 1.05; letter-spacing: -1.6px; margin-bottom: 18px; }
+    .hero p { max-width: 760px; margin: 0 auto 28px; font-size: 20px; opacity: .96; }
+    .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 26px; }
+    .btn { display: inline-block; padding: 16px 28px; border-radius: 14px; font-size: 17px; font-weight: 900; transition: .2s ease; }
+    .btn-primary { background: #fff; color: #1d4ed8; box-shadow: 0 16px 30px rgba(0,0,0,.18); }
+    .btn-secondary { background: rgba(255,255,255,.13); color: #fff; border: 1px solid rgba(255,255,255,.36); }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 18px 34px rgba(0,0,0,.22); }
+    .trust { background: #fff; border-bottom: 1px solid #e5e7eb; padding: 18px 20px; }
+    .trust-grid { max-width: 1120px; margin: auto; display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; text-align: center; color: #334155; font-weight: 800; font-size: 14px; }
+    .section { max-width: 1160px; margin: auto; padding: 58px 20px; }
+    .section-title { text-align: center; margin-bottom: 34px; }
+    .section-title h2 { font-size: clamp(30px,4vw,44px); line-height: 1.12; color: #0f172a; margin-bottom: 10px; }
+    .section-title p { max-width: 760px; margin: auto; color: #475569; font-size: 17px; }
+    .grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+    .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 22px; padding: 28px; box-shadow: 0 12px 30px rgba(15,23,42,.08); display: flex; flex-direction: column; }
+    .icon { width: 50px; height: 50px; border-radius: 15px; background: #eff6ff; color: #1d4ed8; display: flex; align-items: center; justify-content: center; font-size: 25px; margin-bottom: 16px; }
+    .card h3 { color: #0f172a; font-size: 22px; margin-bottom: 10px; }
+    .card p { color: #475569; margin-bottom: 18px; flex: 1; }
+    .card .link { color: #1d4ed8; font-weight: 900; }
+    .feature { background: #fff; border: 1px solid #e5e7eb; border-radius: 26px; overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; box-shadow: 0 18px 46px rgba(15,23,42,.12); }
+    .feature-copy { padding: 42px; }
+    .feature-copy h2 { font-size: clamp(30px,4vw,46px); line-height: 1.08; margin-bottom: 16px; color: #0f172a; }
+    .feature-copy p { color: #475569; font-size: 18px; margin-bottom: 18px; }
+    .checklist { list-style: none; margin: 22px 0 28px; }
+    .checklist li { margin-bottom: 12px; color: #334155; font-weight: 700; }
+    .checklist li:before { content: '✓'; color: #1d4ed8; font-weight: 900; margin-right: 9px; }
+    .feature-visual { background: radial-gradient(circle at top left, #38bdf8, #1d4ed8 55%, #0f172a); color: #fff; display: flex; align-items: center; justify-content: center; padding: 40px; min-height: 360px; text-align: center; }
+    .visual-box { background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.34); border-radius: 24px; padding: 34px; backdrop-filter: blur(10px); max-width: 360px; }
+    .visual-box .big { font-size: 48px; font-weight: 950; line-height: 1; margin-bottom: 12px; }
+    .directory { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; }
+    .directory-item { background: #fff; border: 1px solid #e5e7eb; border-radius: 18px; padding: 22px; box-shadow: 0 8px 22px rgba(15,23,42,.06); }
+    .directory-item h3 { color: #0f172a; font-size: 20px; margin-bottom: 8px; }
+    .directory-item p { color: #475569; margin-bottom: 10px; }
+    .directory-item a { color: #1d4ed8; font-weight: 900; word-break: break-word; }
+    .newsletter { background: #0f172a; color: #fff; border-radius: 26px; padding: 46px 30px; text-align: center; }
+    .newsletter h2 { font-size: clamp(28px,4vw,42px); margin-bottom: 10px; }
+    .newsletter p { max-width: 700px; margin: 0 auto 22px; color: #cbd5e1; }
+    .email-form { max-width: 620px; margin: auto; display: flex; gap: 10px; }
+    .email-form input { flex: 1; padding: 16px; border-radius: 12px; border: none; font-size: 16px; }
+    .email-form button { border: none; cursor: pointer; background: #38bdf8; color: #0f172a; padding: 16px 22px; border-radius: 12px; font-weight: 900; font-size: 16px; }
+    .final { background: linear-gradient(135deg,#1d4ed8,#0f172a); color: #fff; text-align: center; padding: 64px 20px; }
+    .final h2 { font-size: clamp(30px,5vw,48px); line-height: 1.1; margin-bottom: 14px; }
+    .final p { max-width: 720px; margin: 0 auto 26px; color: #dbeafe; font-size: 18px; }
+    footer { max-width: 1080px; margin: auto; padding: 28px 20px; text-align: center; color: #64748b; font-size: 13px; }
+    footer a { color: #1d4ed8; font-weight: 800; }
+    @media (max-width: 880px) { .trust-grid,.grid,.feature,.directory { grid-template-columns: 1fr; } .feature-copy,.feature-visual { padding: 30px; } .email-form { flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <div class="topbar">Curated online deals, tools, travel offers, and shopping resources in one place</div>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="badge">World's Online Marketplace</div>
+      <h1>Discover Smart Deals, Travel Offers, Business Tools & Shopping Guides</h1>
+      <p>Explore a curated network of helpful online resources built to save time, compare options, and find useful offers across travel, shopping, wellness, tech, business, and digital services.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#marketplace">Explore Marketplace</a>
+        <a class="btn btn-secondary" href="#featured">View Featured Sites</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="trust">
+    <div class="trust-grid">
+      <div>✓ Curated resources</div>
+      <div>✓ Multiple categories</div>
+      <div>✓ Deal discovery</div>
+      <div>✓ Affiliate-friendly hub</div>
+    </div>
+  </section>
+
+  <main>
+    <section class="section" id="marketplace">
+      <div class="section-title">
+        <h2>Choose What You’re Looking For</h2>
+        <p>Start with a category below and visit the dedicated site that best matches your needs.</p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <div class="icon">✈️</div>
+          <h3>Travel Deals</h3>
+          <p>Find flight options, vacation packages, rentals, and travel booking resources.</p>
+          <a class="link" href="https://expediatravelpackages.com" target="_blank" rel="noopener">Explore travel deals →</a>
+        </div>
+        <div class="card">
+          <div class="icon">🛒</div>
+          <h3>Shopping & Savings</h3>
+          <p>Browse daily savings, wireless offers, product guides, and deal-focused resources.</p>
+          <a class="link" href="https://savingsreportdaily.com" target="_blank" rel="noopener">Explore savings →</a>
+        </div>
+        <div class="card">
+          <div class="icon">💻</div>
+          <h3>Online Business Tools</h3>
+          <p>Discover website builders, creator tools, business startup guides, and online income resources.</p>
+          <a class="link" href="https://buildwebsitefast.com" target="_blank" rel="noopener">Explore business tools →</a>
+        </div>
+        <div class="card">
+          <div class="icon">🌿</div>
+          <h3>Health & Wellness</h3>
+          <p>Review wellness-focused guides, lifestyle resources, and daily health product offers.</p>
+          <a class="link" href="https://dailywellnessreports.org" target="_blank" rel="noopener">Explore wellness →</a>
+        </div>
+        <div class="card">
+          <div class="icon">🔐</div>
+          <h3>Tech & Security</h3>
+          <p>Read security reports, tech recommendations, digital tools, and safer online living resources.</p>
+          <a class="link" href="https://securetechreports.com" target="_blank" rel="noopener">Explore tech reports →</a>
+        </div>
+        <div class="card">
+          <div class="icon">👗</div>
+          <h3>Fashion & Lifestyle</h3>
+          <p>Find fashion brand ideas, shopping inspiration, style resources, and lifestyle guides.</p>
+          <a class="link" href="https://fashionbrandblueprint.com" target="_blank" rel="noopener">Explore lifestyle →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="feature">
+        <div class="feature-copy">
+          <h2>Your Shortcut to Helpful Online Resources</h2>
+          <p>Explore trusted shopping guides, travel resources, business tools, wellness picks, and everyday savings from one simple destination.</p>
+          <ul class="checklist">
+            <li>Quickly compare useful online resources</li>
+            <li>Find deals, guides, and tools by category</li>
+            <li>Save time searching across multiple topics</li>
+            <li>Discover helpful offers for travel, shopping, business, and lifestyle</li>
+          </ul>
+          <a class="btn btn-primary" href="#featured">Browse Resources</a>
+        </div>
+        <div class="feature-visual">
+          <div class="visual-box">
+            <div class="big">Explore</div>
+            <p>Travel, deals, wellness, tech, fashion, and online business resources organized in one easy-to-use destination.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="featured">
+      <div class="section-title">
+        <h2>Featured Sites in the Network</h2>
+        <p>Use this directory to send visitors into the best matching funnel or niche website.</p>
+      </div>
+
+      <div class="directory">
+        <div class="directory-item"><h3>Travel Packages</h3><p>Vacation package and travel deal discovery.</p><a href="https://expediatravelpackages.com" target="_blank" rel="noopener">expediatravelpackages.com</a></div>
+        <div class="directory-item"><h3>Travel Deal Spot</h3><p>Travel savings, booking options, and trip planning resources.</p><a href="https://traveldealspot.net" target="_blank" rel="noopener">traveldealspot.net</a></div>
+        <div class="directory-item"><h3>Affordable Flights</h3><p>Flight options for budget-conscious travelers.</p><a href="https://spiritairlinesflights.com" target="_blank" rel="noopener">spiritairlinesflights.com</a></div>
+        <div class="directory-item"><h3>Vacation Rentals</h3><p>Vacation rental resources and alternative stay options.</p><a href="https://vacationbyrental.com" target="_blank" rel="noopener">vacationbyrental.com</a></div>
+        <div class="directory-item"><h3>Build Website Fast</h3><p>Website creation tools and online business resources.</p><a href="https://buildwebsitefast.com" target="_blank" rel="noopener">buildwebsitefast.com</a></div>
+        <div class="directory-item"><h3>Creator Tools</h3><p>AI, creator, marketing, and digital growth tools.</p><a href="https://viralcreatortools.io" target="_blank" rel="noopener">viralcreatortools.io</a></div>
+        <div class="directory-item"><h3>Start Your Online Business</h3><p>Online business startup guides and income resources.</p><a href="https://startyouronlinebusinesstoday.com" target="_blank" rel="noopener">startyouronlinebusinesstoday.com</a></div>
+        <div class="directory-item"><h3>Virtual Assistant Services</h3><p>Virtual assistant service and job-related resources.</p><a href="https://virtualassistantservicesjobs.com" target="_blank" rel="noopener">virtualassistantservicesjobs.com</a></div>
+        <div class="directory-item"><h3>Savings Report Daily</h3><p>Daily savings, shopping guides, and product deal reports.</p><a href="https://savingsreportdaily.com" target="_blank" rel="noopener">savingsreportdaily.com</a></div>
+        <div class="directory-item"><h3>Wireless Deal Finder</h3><p>Wireless carrier and phone deal discovery.</p><a href="https://wirelessdealfinder.com" target="_blank" rel="noopener">wirelessdealfinder.com</a></div>
+        <div class="directory-item"><h3>Daily Wellness Reports</h3><p>Wellness, lifestyle, and health-focused resources.</p><a href="https://dailywellnessreports.org" target="_blank" rel="noopener">dailywellnessreports.org</a></div>
+        <div class="directory-item"><h3>Secure Tech Reports</h3><p>Technology, cybersecurity, and online safety resources.</p><a href="https://securetechreports.com" target="_blank" rel="noopener">securetechreports.com</a></div>
+        <div class="directory-item"><h3>Fashion Brand Blueprint</h3><p>Fashion, style, and brand-building resources.</p><a href="https://fashionbrandblueprint.com" target="_blank" rel="noopener">fashionbrandblueprint.com</a></div>
+        <div class="directory-item"><h3>Course Income Blueprint</h3><p>Online course creation and education business resources.</p><a href="https://courseincomeblueprint.com" target="_blank" rel="noopener">courseincomeblueprint.com</a></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="newsletter">
+        <h2>Get New Deals & Resources</h2>
+        <p>Add your email form provider later, such as ConvertKit, Mailchimp, Beehiiv, or Systeme.io. This placeholder is ready for lead capture.</p>
+        <form class="email-form">
+          <input type="email" placeholder="Enter your email address" />
+          <button type="button">Notify Me</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <section class="final">
+    <h2>Start Exploring the Marketplace</h2>
+    <p>Browse curated sites for travel, shopping, wellness, tech, fashion, and online business tools.</p>
+    <a class="btn btn-primary" href="#marketplace">Explore Categories</a>
+  </section>
+
+  <footer>
+    <p><strong>Affiliate Disclosure:</strong> This site may contain affiliate links. If you click a link and make a purchase, we may earn a commission at no additional cost to you.</p>
+    <p>World's Online Marketplace is an independent directory and is not officially endorsed by any retailer, travel provider, brand, or service mentioned. Offers, pricing, and availability may change at any time.</p>
+    <p><a href="#">Privacy Policy</a> · <a href="#">Terms</a> · <a href="#">Contact</a></p>
+  </footer>
+</body>
+</html>
